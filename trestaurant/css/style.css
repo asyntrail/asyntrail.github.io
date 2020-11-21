@@ -1,0 +1,511 @@
+.navbar {
+    background-color: #ffde28;
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.navbar-brand {
+    padding-top: 5px;
+}
+
+.navbar-default .navbar-nav li a {
+    padding: 18px 20px 15px 0px;
+    font-weight: bold;
+    text-align: center;
+    color: #914726;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #914726;
+    background-color: #ffde28;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav li .order-button {
+    color: #914726;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 100px;
+    border: 2px solid #914726;
+    padding: 8px 12px 8px 12px;
+    margin-top: 6px;
+}
+
+.navbar-default .navbar-nav li .order-button:hover {
+    background: linear-gradient(to bottom, #914726, #ffde28);
+    background: -o-linear-gradient(top, #914726 51%, #ffde28 100%);
+    background: -moz-linear-gradient(top, #914726 51%, #ffde28 100%);
+    background: -webkit-linear-gradient(top, #914726 51%, #ffde28 100%);
+    background: -ms-linear-gradient(top, #914726 51%, #ffde28 100%);
+    color: #ffde28;
+    border: 2px solid #914726;
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.section-hero {
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    text-align: center;
+}
+
+.semiopacity {
+    background-color: rgba(141, 69, 37, 0.7);
+    min-height: 500px;
+    padding-top: 120px
+}
+
+.hero-title {
+    font-size: 50px;
+}
+
+.hero-text {
+    padding-bottom: 40px;
+}
+
+.hero-button {
+    border-radius: 100px;
+    border: 2px solid white;
+    background: #914726;
+    color: white;
+    padding: 10px;
+}
+
+.hero-button:hover {
+    border: 2px solid #ffde28;
+    color: #ffde28;
+    text-decoration: none;
+}
+
+.section-specials {
+    padding-bottom: 80px;
+}
+
+.title-specials {
+    text-align: center;
+    color: #914726;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.title-specials:after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    background-color: #ffde28;
+    width: 80px;
+    height: 3px;
+}
+
+.dish-col {
+    margin-bottom: 20px;
+}
+
+.dish-img-border {
+    border-bottom: 5px solid #ffde28;
+}
+
+.dish-title {
+    text-align: center;
+    color: #914726;
+    text-transform: uppercase;
+}
+
+.dish-description {
+    text-align: center;
+}
+
+.servering {
+    text-align: left;
+}
+
+.dish-price {
+    display: block;
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.dish-tax {
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.section-about {
+    padding-bottom: 80px;
+}
+
+.img-about {
+    width: 600px;
+    height: 400px;
+}
+
+.two-section {
+    text-align: left;
+    color: #914726;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.two-section:after {
+    text-align: left;
+    content: "";
+    display: block;
+    margin: 5px 0px;
+    background-color: #ffde28;
+    width: 80px;
+    height: 3px;
+}
+
+.about-text {
+    padding-right: 150px;
+    line-height: 1.5;
+}
+
+.service-text {
+    padding-left: 150px;
+    line-height: 1.5;
+}
+
+.img-service {
+    float: right;
+}
+
+.section-menu {
+    background-color: #f4f4f4;
+    padding-top: 60px;
+}
+
+
+.title-menu {
+    text-align: center;
+    color: #914726;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.title-menu:after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    background-color: #ffde28;
+    width: 30px;
+    height: 3px;
+}
+
+
+.menu-col {
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.menu-content {
+    padding: 0px 5px 0px 0px;
+}
+
+.menu-col-padding {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 3px;
+}
+
+.menu-dish-description {
+    padding-left: 10px;
+}
+
+.menu-dish-title {
+    text-align: left;
+    color: #914726;
+    text-transform: uppercase;
+}
+
+.menu-dish-price {
+    text-align: right;
+    font-size: 22px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.menu-dish-tax {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+
+.load-border {
+    border-bottom: 1px solid #ddd;
+    padding-top: 10px;
+    margin-bottom: 40px;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+#myList li {
+    display: none;
+    list-style-type: none;
+}
+
+#loadMore {
+    cursor: pointer;
+    text-align: center;
+    color: #914726;
+}
+
+#loadMore:hover {
+    color: green;
+}
+
+#showLess {
+    text-align: center;
+    color: red;
+    cursor: pointer;
+    display: none;
+}
+
+#showLess:hover {
+    color: black;
+}
+
+.section-testimonials {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 450px;
+}
+
+.testimonials {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 450px;
+}
+
+.testimonials-semiopacity {
+    background-color: rgba(255, 235, 59, 0.9);
+    min-height: 450px;
+    padding-top: 80px;
+}
+
+.testimonials-title {
+    text-align: center;
+    color: #914726;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.testimonials-title:after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    background-color: #ffffff;
+    width: 60px;
+    height: 3px;
+}
+
+.testimonials-content {
+    font-style: italic;
+    font-size: 23px;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    min-height: 200px;
+    display: block;
+}
+
+.carousel-indicators {
+    position: inherit;
+    width: inherit;
+    margin-left: inherit;
+}
+
+
+.section-reservation {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.reservation {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.reservation-semiopacity {
+    background-color: rgba(141, 69, 37, 0.7);
+    padding-bottom: 40px;
+}
+
+.block-form {
+    padding-top: 60px;
+}
+
+.reservation-title {
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: 40px;
+}
+
+.reservation-title:after {
+    content: "";
+    display: block;
+    margin: 5px auto 0;
+    background-color: #ffde28;
+    width: 60px;
+    height: 3px;
+}
+
+
+.form-padding {
+    padding-right: 260px;
+    padding-left: 260px;
+    text-align: center;
+}
+
+.form-control {
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: 2px solid #ffde28;
+}
+
+.submit-button {
+    border-radius: 100px;
+    border: 2px solid #ffde28;
+    background: #914726;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 140px;
+}
+
+.submit-button:hover {
+    color: #914726;
+    border: 2px solid #914726;
+    background: #ffde28;
+    text-decoration: none;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+}
+
+
+.footer-text {
+    text-align: center;
+    color: #914726;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer-telephone {
+    color: #914726;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.social-btn {
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.footer-btn {
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.foter-logo {
+    margin-top: 10px;
+}
+
+
+@media (max-width:1024px) {
+    .form-padding {
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+    .about-text {
+        padding-right: 50px;
+    }
+    .service-text {
+        padding-left: 50px;
+    }
+}
+
+
+
+@media (max-width:991px) {
+    .about-text {
+        padding-right: 0px;
+    }
+    .service-text {
+        padding: 0px 0px 20px 0px;
+    }
+    .two-section {
+        margin-top: 0px;
+    }
+    .img-service {
+        float: none;
+    }
+    .testimonials-content {
+        font-size: 18px;
+    }
+    .testimonials-content {
+        margin: 0px;
+    }
+    .menu-dish-price {
+        margin-left: 5px;
+    }
+    .invisible-md-4 {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .form-padding {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .menu-col {
+        padding: 2px 5px;
+    }
+    .section-service {
+        padding-bottom: 20px;
+    }
+    .img-about,
+    .img-service {
+        width: 100%;
+        height: 100%;
+    }
+    .two-section {
+        margin-top: 30px;
+    }
+    .section-about {
+        padding-bottom: 0px;
+    }
+    .navbar-default .navbar-nav li a {
+        padding: 10px 15px;
+    }
+}
