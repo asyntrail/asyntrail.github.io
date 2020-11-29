@@ -2,8 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Asyntrail Portfolio Website</title>
-    <meta name="description" content="Vasiliy Pokotylo personal porfolio website" />
+    <title> Asyntrail's personal portfolio website</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -78,7 +77,7 @@
                 <h3 class="portfolio-col__title">
                   <a href="https://asyntrail.github.io/tdisplay" onclick="trackOutboundLink('https://asyntrail.github.io/tdisplay'); return false;">Display </a>
                 </h3>
-                <p class="portfolio-col__description">Minisite template converted to WordPress theme. Has responsive design and a slider Slick. <br>Technologies: HTML5, CSS3, JS, PHP.</p>
+                <p class="portfolio-col__description">Minisite template for WordPress theme. Has responsive design and a slider Slick. <br>Technologies: HTML5, CSS3, JS.</p>
               </div>
               <!-- end portfolio-col -->
               <!-- begin portfolio-col -->
@@ -147,8 +146,8 @@
           <!-- begin contact -->
           <div class="contact">
             <p class="contact__description"> If you have any questions, please contact me.</p>
-            <a href="mailto:asyntrail@gmail.com" role="button" class="contact__btn" >Send Email</a>
-            <a href="https://www.facebook.com/asyntrail" role="button" onclick=" trackOutboundLink('https://www.facebook.com/asyntrail'); return false;"class="contact__btn btn-blue" >Facebook</a>
+            <a href="mailto:asyntrail@gmail.com" role="button" class="contact__btn">Send Email</a>
+            <a href="https://www.facebook.com/asyntrail" role="button" onclick=" trackOutboundLink('https://www.facebook.com/asyntrail'); return false;" class="contact__btn btn-blue">Facebook</a>
             <a href="https://github.com/asyntrail" role="button" onclick=" trackOutboundLink('https://github.com/asyntrail'); return false;" class="contact__btn btn-green">Github</a>
           </div>
           <!-- end contact -->
@@ -162,27 +161,32 @@
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="js/app.js">
+    <script type="text/javascript" src="js/app.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102741315-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102741315-1');
+      var trackOutboundLink = function(url)
+      {
+        gtag('event', 'click',
+        {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function()
+          {
+            window.open(url);
+          }
+        });
+      }
+
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102741315-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-102741315-1');
-
-  var trackOutboundLink = function(url) {
-  gtag('event', 'click', {
-    'event_category': 'outbound',
-    'event_label': url,
-    'transport_type': 'beacon',
-    'event_callback': function() { window.open(url);}
-  });
-}
-</script>
-
     <!-- END scripts -->
   </body>
 </html>
