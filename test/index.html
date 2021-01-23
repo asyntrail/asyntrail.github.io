@@ -26,28 +26,69 @@
               <th>Разом</th>
             </tr>
             <tr>
-              <th>Холодная вода</th>
+              <th>Холодне вод.п.</th>
               <th><input name="cold-water" id="cw-tariff" required placeholder="" type="tel" value="21.756" /></th>
-              <th><input name="cold-water" id="cw-cur" required placeholder="" type="tel" value="" /></th>
-              <th><input name="cold-water" id="cw-pre" required placeholder="" type="tel" value="" /></th>
+              <th><input name="cold-water" id="cw-cur" required placeholder="" type="tel" value="3" /></th>
+              <th><input name="cold-water" id="cw-pre" required placeholder="" type="tel" value="2" /></th>
               <th><span id="cw-usage"></span></th>
               <th><span id="cw-sum"></span></th>
             </tr>
             <tr>
-              <th>Гарячая вода</th>
+              <th>Гаряче вод.п.</th>
               <th><input name="hot-water" id="hw-tariff" required placeholder="" type="tel" value="97.89" /></th>
-              <th><input name="hot-water" id="hw-cur" required placeholder="" type="tel" value="" /></th>
-              <th><input name="hot-water" id="hw-pre" required placeholder="" type="tel" value="" /></th>
+              <th><input name="hot-water" id="hw-cur" required placeholder="" type="tel" value="3" /></th>
+              <th><input name="hot-water" id="hw-pre" required placeholder="" type="tel" value="2" /></th>
               <th><span id="hw-usage"></span></th>
               <th><span id="hw-sum"></span></th>
             </tr>
             <tr>
-              <th>Отвод г.в.</th>
+              <th>Відвід г.в.</th>
               <th><input name="out-water" id="ow-tariff" required placeholder="" type="tel" value="10.272" /></th>
-              <th><input name="out-water" id="ow-cur" required placeholder="" type="tel" value="" /></th>
-              <th><input name="out-water" id="ow-pre" required placeholder="" type="tel" value="" /></th>
+              <th><input name="out-water" id="ow-cur" required placeholder="" type="tel" value="3" /></th>
+              <th><input name="out-water" id="ow-pre" required placeholder="" type="tel" value="2" /></th>
               <th><span id="ow-usage"></span></th>
               <th><span id="ow-sum"></span></th>
+            </tr>
+            <tr>
+              <th>Опалення</th>
+              <th><input name="heating" id="heat" required placeholder="" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="heats"></span></th>
+            </tr>
+            <tr>
+              <th>Внески ЦО</th>
+              <th><input name="сontribution" id="cont1" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="2"> Внески ГВП </th>
+              <th><input name="сontribution" id="cont2" required placeholder="-" type="tel" value="" /></th>
+              <th><span id="conts"></span></th>
+            </tr>
+            <tr>
+              <th>Електроенергія</th>
+              <th><input name="electricity" id="elec" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="elecs"></span></th>
+            </tr>
+            <tr>
+              <th>Комуналка</th>
+              <th><input name="komun" id="kom" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="koms"></span></th>
+            </tr>
+            <tr>
+              <th>Вивезення п.в.</th>
+              <th><input name="export" id="export" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="exports"></span></th>
+            </tr>
+            <tr>
+              <th>Домофон</th>
+              <th><input name="phone" id="phone" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="phones"></span></th>
+            </tr>
+            <tr>
+              <th colspan="5">Загальна сума</th>
+              <th><span id="total"></span></th>
             </tr>
           </table>
           <button name="cold-water" id="next" type="button">Start</button>
