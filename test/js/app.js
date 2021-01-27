@@ -50,23 +50,12 @@ document.getElementById("exports").innerHTML = ex ;
 const ph = +document.getElementById('phone').value;
 document.getElementById("phones").innerHTML = ph ;
 
-const tot = cwss+hwss+owss+h+cts+e+k+ex+ph;
+
+const tot = (cwss*100+hwss*100+owss*100+h*100+cts*100+e*100+k*100+ex*100+ph*100)/100;
 
 document.getElementById("total").innerHTML = tot;
 
 }
-
-// function check() {
-// const a = 21.756;
-// const b = 97.89;
-// const c = 10.272;
-// const a1 = ( Math.ceil(a * 100) / 100 );
-// const b1 = ( Math.ceil(b * 100) / 100 );
-// const c1 = ( Math.ceil(c * 100) / 100 );
-
-// const tot = a1+b1+c1;
-// document.getElementById("total").innerHTML = tot;
-// }
 
 
 const x = document.getElementById('next');
