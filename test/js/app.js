@@ -31,6 +31,7 @@ const owss = ( Math.ceil(ows * 100) / 100 );
 document.getElementById("ow-sum").innerHTML = owss;
 
 const h = +document.getElementById('heat').value;
+
 document.getElementById("heats").innerHTML = h;
 
 const ct1 = +document.getElementById('cont1').value;
@@ -50,10 +51,32 @@ document.getElementById("exports").innerHTML = ex ;
 const ph = +document.getElementById('phone').value;
 document.getElementById("phones").innerHTML = ph ;
 
+const ed = +document.getElementById('edi').value;
+document.getElementById("edis").innerHTML = ed ;
 
-const tot = (cwss*100+hwss*100+owss*100+h*100+cts*100+e*100+k*100+ex*100+ph*100)/100;
+
+const tot = (((cwss*100+hwss*100+owss*100+e*100)-ed*100)+h*100+cts*100+k*100+ex*100+ph*100)/100;
 
 document.getElementById("total").innerHTML = tot;
+
+const ps =((cwss*100+hwss*100+owss*100+e*100)-ed*100)/100;
+document.getElementById("pers_sum").innerHTML = ps ;
+const psm = +document.getElementById('pers_m').value;
+const psd = ( Math.ceil((ps/psm) * 100) / 100 );
+document.getElementById("pers_dev").innerHTML = psd ;
+
+const gs = (h*100+cts*100+k*100+ex*100+ph*100)/100;
+document.getElementById("gen_sum").innerHTML = gs ;
+const gsm = +document.getElementById('gen_m').value;
+const gsd = ( Math.ceil((gs/gsm) * 100) / 100 );
+document.getElementById("gen_dev").innerHTML = gsd ;
+
+const per1 = +document.getElementById('pers1').value;
+const pys1 = ( Math.ceil((gsd + (psd*per1)) * 100) / 100 );
+const per2 = +document.getElementById('pers2').value;
+const pys2 = ( Math.ceil((gsd + (psd*per2)) * 100) / 100 );
+document.getElementById("pay_sum1").innerHTML = pys1 ;
+document.getElementById("pay_sum2").innerHTML = pys2 ;
 
 }
 

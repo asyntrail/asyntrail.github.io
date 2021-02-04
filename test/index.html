@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Template</title>
+    <title>Beta test reckon</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -25,62 +25,68 @@
               <th>Різниця</th>
               <th>Разом</th>
             </tr>
-            <tr>
+            <tr class="person-color">
               <th>Холодне вод.п.</th>
               <th><input name="cold-water" id="cw-tariff" required placeholder="" type="tel" value="21.756" /></th>
-              <th><input name="cold-water" id="cw-cur" required placeholder="" type="tel" value="3" /></th>
-              <th><input name="cold-water" id="cw-pre" required placeholder="" type="tel" value="2" /></th>
+              <th><input name="cold-water" id="cw-cur" required placeholder="" type="tel" value="902" /></th>
+              <th><input name="cold-water" id="cw-pre" required placeholder="" type="tel" value="893" /></th>
               <th><span id="cw-usage"></span></th>
               <th><span id="cw-sum"></span></th>
             </tr>
-            <tr>
+            <tr class="person-color">
               <th>Гаряче вод.п.</th>
               <th><input name="hot-water" id="hw-tariff" required placeholder="" type="tel" value="97.89" /></th>
-              <th><input name="hot-water" id="hw-cur" required placeholder="" type="tel" value="3" /></th>
-              <th><input name="hot-water" id="hw-pre" required placeholder="" type="tel" value="2" /></th>
+              <th><input name="hot-water" id="hw-cur" required placeholder="" type="tel" value="492" /></th>
+              <th><input name="hot-water" id="hw-pre" required placeholder="" type="tel" value="486" /></th>
               <th><span id="hw-usage"></span></th>
               <th><span id="hw-sum"></span></th>
             </tr>
-            <tr>
+            <tr class="person-color">
               <th>Відвід г.в.</th>
-              <th><input name="out-water" id="ow-tariff" required placeholder="" type="tel" value="10.272" /></th>
-              <th><input name="out-water" id="ow-cur" required placeholder="" type="tel" value="3" /></th>
-              <th><input name="out-water" id="ow-pre" required placeholder="" type="tel" value="2" /></th>
+              <th><input name="out-water" id="ow-tariff" required placeholder="" type="tel" value="10.212" /></th>
+              <th><input name="out-water" id="ow-cur" required placeholder="" type="tel" value="492" /></th>
+              <th><input name="out-water" id="ow-pre" required placeholder="" type="tel" value="486" /></th>
               <th><span id="ow-usage"></span></th>
               <th><span id="ow-sum"></span></th>
             </tr>
-            <tr>
+            <tr class="person-color">
+              <th>Електроенергія</th>
+              <th><input name="electricity" id="elec" required placeholder="-" type="tel" value="278.16" /></th>
+              <th colspan="3"> </th>
+              <th><span id="elecs"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Знижка</th>
+              <th><input name="edit" id="edi" placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="edis"></span></th>
+            </tr>
+            <tr class="general-color">
               <th>Опалення</th>
-              <th><input name="heating" id="heat" required placeholder="" type="tel" value="" /></th>
+              <th><input name="heating" id="heat" required placeholder="-" type="tel" value="872.04" /></th>
               <th colspan="3"> </th>
               <th><span id="heats"></span></th>
             </tr>
-            <tr>
+            <tr class="general-color">
               <th>Внески ЦО</th>
               <th><input name="сontribution" id="cont1" required placeholder="-" type="tel" value="" /></th>
               <th colspan="2"> Внески ГВП </th>
               <th><input name="сontribution" id="cont2" required placeholder="-" type="tel" value="" /></th>
               <th><span id="conts"></span></th>
             </tr>
-            <tr>
-              <th>Електроенергія</th>
-              <th><input name="electricity" id="elec" required placeholder="-" type="tel" value="" /></th>
-              <th colspan="3"> </th>
-              <th><span id="elecs"></span></th>
-            </tr>
-            <tr>
+            <tr class="general-color">
               <th>Комуналка</th>
               <th><input name="komun" id="kom" required placeholder="-" type="tel" value="" /></th>
               <th colspan="3"> </th>
               <th><span id="koms"></span></th>
             </tr>
-            <tr>
+            <tr class="general-color">
               <th>Вивезення п.в.</th>
               <th><input name="export" id="export" required placeholder="-" type="tel" value="" /></th>
               <th colspan="3"> </th>
               <th><span id="exports"></span></th>
             </tr>
-            <tr>
+            <tr class="general-color">
               <th>Домофон</th>
               <th><input name="phone" id="phone" required placeholder="-" type="tel" value="" /></th>
               <th colspan="3"> </th>
@@ -91,7 +97,45 @@
               <th><span id="total"></span></th>
             </tr>
           </table>
-          <button name="cold-water" id="next" type="button">Start</button>
+          <button class="form__btn" id="next" type="button">START</button>
+          <table>
+            <tr class="person-color">
+              <th></th>
+              <th>Разом</th>
+            </tr>
+            <tr class="person-color">
+              <th>Сума персональних показників</th>
+              <th><span id="pers_sum"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Персонал. показ. на <input name="person" id="pers_m" required placeholder="-" type="tel" value="5" /></th>
+              <th><span id="pers_dev"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th></th>
+              <th>-</th>
+            </tr>
+            <tr class="general-color">
+              <th>Сума загальних показників</th>
+              <th><span id="gen_sum"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Загальні навпіл <input name="general" id="gen_m" required placeholder="-" type="tel" value="2" /></th>
+              <th><span id="gen_dev"></span></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>-</th>
+            </tr>
+            <tr>
+              <th>Сума до сплати <input name="pay" id="pers1" required placeholder="-" type="tel" value="1" /> особи</th>
+              <th><span id="pay_sum1"></span></th>
+            </tr>
+            <tr>
+              <th>Сума до сплати <input name="pay" id="pers2" required placeholder="-" type="tel" value="3" /> особи</th>
+              <th><span id="pay_sum2"></span></th>
+            </tr>
+          </table>
         </form>
         <!-- end count -->
       </div>
