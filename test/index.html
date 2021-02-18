@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Reckon beta test</title>
+    <title>Beta reckon</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -97,7 +97,7 @@
               <th><span id="total"></span></th>
             </tr>
           </table>
-          <button class="form__btn" id="next" type="button">START</button>
+          <button class="form__btn" id="next" type="submit">Calculate</button>
           <table>
             <tr class="person-color">
               <th></th>
@@ -112,8 +112,8 @@
               <th><span id="pers_dev"></span></th>
             </tr>
             <tr class="general-color">
-              <th></th>
-              <th>-</th>
+              <!--             <th ></th>
+            <th>-</th> -->
             </tr>
             <tr class="general-color">
               <th>Сума загальних показників</th>
@@ -124,8 +124,8 @@
               <th><span id="gen_dev"></span></th>
             </tr>
             <tr>
-              <th></th>
-              <th>-</th>
+              <!--             <th ></th>
+            <th>-</th> -->
             </tr>
             <tr>
               <th>Сума до сплати <input class="second-table" name="pay" id="pers1" required placeholder="-" type="tel" value="1" /> особи</th>
@@ -140,10 +140,46 @@
         <!-- end count -->
       </div>
       <!-- end container -->
+      <!-- begin footer -->
+      <footer class="footer">
+        <!-- begin contact-row -->
+        <div class="contact">
+          <span>Маєте питання? Напишіть нам</span>
+          <a href="mailto:asyntrail@gmail.com" role="button" onclick=" trackOutboundLink('mailto:asyntrail@gmail.com'); return false;" class="contact__btn">&#128386;</a>
+          <span class="copy">© 2021 Asyntrail</span>
+        </div>
+        <!-- end contact-row -->
+      </footer>
+      <!-- end footer -->
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102349619-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102349619-1');
+      var trackOutboundLink = function(url)
+      {
+        gtag('event', 'click',
+        {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function()
+          {
+            window.open(url);
+          }
+        });
+      }
+
+    </script>
     <!-- END scripts -->
   </body>
 </html>

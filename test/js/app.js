@@ -36,7 +36,7 @@ document.getElementById("heats").innerHTML = h;
 
 const ct1 = +document.getElementById('cont1').value;
 const ct2 = +document.getElementById('cont2').value;
-const cts = ct1 + ct2;
+const cts = ( Math.ceil((ct1 + ct2) * 100) / 100 );
 document.getElementById("conts").innerHTML = cts;
 
 const e = +document.getElementById('elec').value;
@@ -81,5 +81,5 @@ document.getElementById("pay_sum2").innerHTML = pys2 ;
 }
 
 
-const x = document.getElementById('next');
-x.onclick = check;
+// const x = document.getElementById('next');
+// x.onclick = check;
