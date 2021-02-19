@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reckon Beta </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" media="all" href="css/app.css" />
+  </head>
+  <body>
+    <!-- BEGIN content -->
+    <div class="out">
+      <!-- begin container -->
+      <div class="container">
+        <!-- begin count -->
+        <form onsubmit="check(); return false" class="count-form">
+          <table>
+            <tr>
+              <th></th>
+              <th>Тариф</th>
+              <th>Поточні</th>
+              <th>Попередні</th>
+              <th>Різниця</th>
+              <th>Разом</th>
+            </tr>
+            <tr class="person-color">
+              <th>Холодне вод.п.</th>
+              <th><input name="cold-water" id="cw-tariff" required placeholder="" type="tel" value="21.756" /></th>
+              <th><input name="cold-water" id="cw-cur" required placeholder="" type="tel" value="" /></th>
+              <th><input name="cold-water" id="cw-pre" required placeholder="" type="tel" value="" /></th>
+              <th><span id="cw-usage"></span></th>
+              <th><span id="cw-sum"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Гаряче вод.п.</th>
+              <th><input name="hot-water" id="hw-tariff" required placeholder="" type="tel" value="97.89" /></th>
+              <th><input name="hot-water" id="hw-cur" required placeholder="" type="tel" value="" /></th>
+              <th><input name="hot-water" id="hw-pre" required placeholder="" type="tel" value="" /></th>
+              <th><span id="hw-usage"></span></th>
+              <th><span id="hw-sum"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Відвід г.в.</th>
+              <th><input name="out-water" id="ow-tariff" required placeholder="" type="tel" value="10.212" /></th>
+              <th><input name="out-water" id="ow-cur" required placeholder="" type="tel" value="" /></th>
+              <th><input name="out-water" id="ow-pre" required placeholder="" type="tel" value="" /></th>
+              <th><span id="ow-usage"></span></th>
+              <th><span id="ow-sum"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Електроенергія</th>
+              <th><input name="electricity" id="elec" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="elecs"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Знижка</th>
+              <th><input name="edit" id="edi" placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="edis"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Опалення</th>
+              <th><input name="heating" id="heat" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="heats"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Внески ЦО</th>
+              <th><input name="сontribution" id="cont1" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="2"> Внески ГВП </th>
+              <th><input name="сontribution" id="cont2" required placeholder="-" type="tel" value="" /></th>
+              <th><span id="conts"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Комуналка</th>
+              <th><input name="komun" id="kom" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="koms"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Вивезення п.в.</th>
+              <th><input name="export" id="export" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="exports"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Домофон</th>
+              <th><input name="phone" id="phone" required placeholder="-" type="tel" value="" /></th>
+              <th colspan="3"> </th>
+              <th><span id="phones"></span></th>
+            </tr>
+            <tr>
+              <th colspan="5">Загальна сума</th>
+              <th><span id="total"></span></th>
+            </tr>
+          </table>
+          <button class="form__btn" id="next" type="submit">Calculate</button>
+          <table>
+            <tr class="person-color">
+              <th></th>
+              <th>Разом</th>
+            </tr>
+            <tr class="person-color">
+              <th>Сума персональних показників</th>
+              <th><span id="pers_sum"></span></th>
+            </tr>
+            <tr class="person-color">
+              <th>Поділити на <input class="second-table" name="person" id="pers_m" required placeholder="-" type="tel" value="5" /></th>
+              <th><span id="pers_dev"></span></th>
+            </tr>
+            <tr class="general-color">
+              <!--             <th ></th>
+            <th>-</th> -->
+            </tr>
+            <tr class="general-color">
+              <th>Сума загальних показників</th>
+              <th><span id="gen_sum"></span></th>
+            </tr>
+            <tr class="general-color">
+              <th>Поділити на <input class="second-table" name="general" id="gen_m" required placeholder="-" type="tel" value="2" /></th>
+              <th><span id="gen_dev"></span></th>
+            </tr>
+            <tr>
+              <!--             <th ></th>
+            <th>-</th> -->
+            </tr>
+            <tr>
+              <th>Сума до сплати <input class="second-table" name="pay" id="pers1" required placeholder="-" type="tel" value="1" /> особи</th>
+              <th><span id="pay_sum1"></span></th>
+            </tr>
+            <tr>
+              <th>Сума до сплати <input class="second-table" name="pay" id="pers2" required placeholder="-" type="tel" value="3" /> особи</th>
+              <th><span id="pay_sum2"></span></th>
+            </tr>
+          </table>
+        </form>
+        <!-- end count -->
+      </div>
+      <!-- end container -->
+      <!-- begin footer -->
+      <footer class="footer">
+        <!-- begin contact-row -->
+        <div class="contact">
+          <span>Маєте питання? Напишіть відгук</span>
+          <a href="mailto:asyntrail@gmail.com" role="button" onclick=" trackOutboundLink('mailto:asyntrail@gmail.com'); return false;" class="contact__btn">&#128386;</a>
+          <span class="copy">© 2021 Asyntrail</span>
+        </div>
+        <!-- end contact-row -->
+      </footer>
+      <!-- end footer -->
+    </div>
+    <!-- END content -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102349619-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102349619-1');
+      var trackOutboundLink = function(url)
+      {
+        gtag('event', 'click',
+        {
+          'event_category': 'outbound',
+          'event_label': url,
+          'transport_type': 'beacon',
+          'event_callback': function()
+          {
+            window.open(url);
+          }
+        });
+      }
+
+    </script>
+    <!-- END scripts -->
+  </body>
+</html>
