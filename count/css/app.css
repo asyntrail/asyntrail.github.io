@@ -1,0 +1,15 @@
+.container {
+  margin: 0 auto;
+  max-width: 940px;
+  text-align: center;
+}
+
+.form-control{
+  text-align: center;
+}
+
+.form__text{
+  display: block;
+  margin-bottom: 40px;
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Math training beta </title>
+    <meta name="robots" content="noindex,nofollow"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Simple math training (Beta version)">
+</head>
+
+<body>
+    <div class="container">
+        <div class="count-box">
+            <form class="selection" >
+                <div class="action-group">
+                    <p>select action:</p>
+                    <p><input name="action" id="plus" type="radio" value="+" checked> + </p>
+                    <p><input name="action" id="minus" type="radio" value="-"> - </p>
+                    <p><input name="action" id="multiple" type="radio" value="*"> * </p>
+                    <p><input name="action" id="divide" type="radio" value="/"> / </p>
+                </div>
+                <div class="difficult-group">
+                    <p>select difficult:</p>
+                    <p><input name="difficult" id="one" type="radio" value="1" checked> 1 </p>
+                    <p><input name="difficult" id="ten" type="radio" value="10"> 10 </p>
+                    <p><input name="difficult" id="hundreds" type="radio" value="100"> 100 </p>
+                </div>
+            </form>
+            <hr>
+            <div id="score"></div>
+            <div>Count: <span id="target"></span></div>
+            <form onsubmit="check(); return false">
+                <input id="expression" required placeholder="" type="tel">
+                <button id="next" type="button">Start</button>
+                <button id="checkb" type="submit">check</button>
+            </form>
+            <hr>
+            <div class="hint" id="hint">Press Start button</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/polygon.js"></script>
+</body>
+
+</html>
