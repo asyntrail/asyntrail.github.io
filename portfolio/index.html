@@ -1,192 +1,191 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <title> Asyntrail personal portfolio website</title>
+    <title>Asyntrail personal portfolio website</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" media="all" href="css/app.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- begin sidebar menu -->
     <div id="sidebar" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times</a>
-      <div class="toggle-btn" onclick="openNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#portfolio-section">PORTFOLIO</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times</a>
+        <div class="toggle-btn" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#portfolio-section">PORTFOLIO</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
     </div>
     <!-- end sidebar menu-->
     <!-- BEGIN content -->
     <div class="out">
-      <!-- begin header -->
-      <header class="header" id="header">
-        <!-- begin nav -->
-        <nav class="nav" id="navbar">
-          <ul>
-            <li><a class="nav-link" href="#contact">Contact</a></li>
-            <li><a class="nav-link" href="#about">About </a></li>
-            <li><a class="nav-link" href="#portfolio-section">Portfolio</a></li>
-          </ul>
-        </nav>
-        <!-- end nav -->
-      </header>
-      <!-- end header -->
-      <!-- begin main -->
-      <main class="main">
-        <!-- begin welcome-section -->
-        <section class="welcome-section" id="welcome-section">
-          <p>Vasiliy Pokotylo</p>
-          <h1 class="welcome-section__title">Front-end Developer</h1>
-          <p class="welcome-section__description">Hello and welcome to my personal portfolio website!</p>
-          <a class="welcome-section__button" href="#portfolio-section">VIEW PORTFOLIO</a>
-        </section>
-        <!-- end welcome-section -->
-        <!-- begin portfolio-section -->
-        <section class="portfolio-section" id="portfolio-section">
-          <h3 class="section-title">Portfolio</h3>
-          <!-- begin container -->
-          <div class="container">
-            <!-- begin portfolio -->
-            <div class="portfolio clearfix">
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/tshaker" onclick="trackOutboundLink('https://asyntrail.github.io/tshaker'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/shaker-thumb.jpg" alt="shaker-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/tshaker" onclick="trackOutboundLink('https://asyntrail.github.io/tshaker'); return false;">Shaker </a>
-                </h3>
-                <p class="portfolio-col__description">Responsive template with Slick slider and Fancybox library. <br>Technologies: HTML5, CSS3, JS, Slick slider, Fancybox3.</p>
-              </div>
-              <!-- end portfolio-col -->
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/tdisplay" onclick="trackOutboundLink('https://asyntrail.github.io/tdisplay'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/display-thumb.jpg" alt="display-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/tdisplay" onclick="trackOutboundLink('https://asyntrail.github.io/tdisplay'); return false;">Display </a>
-                </h3>
-                <p class="portfolio-col__description">Minisite template for WordPress theme. Has responsive design and a slider Slick. <br>Technologies: HTML5, CSS3, JS.</p>
-              </div>
-              <!-- end portfolio-col -->
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/trestaurant" onclick="trackOutboundLink('https://asyntrail.github.io/trestaurant'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/restaurant-thumb.jpg" alt="restaurant-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/trestaurant" onclick="trackOutboundLink('https://asyntrail.github.io/trestaurant'); return false;">Restaurant service </a>
-                </h3>
-                <p class="portfolio-col__description">Restaurant page template, has responsive design and java scripts. <br>Technologies: HTML5, Bootstrap3, CSS3, JS.</p>
-              </div>
-              <!-- end portfolio-col -->
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/ttransport" onclick="trackOutboundLink('https://asyntrail.github.io/ttransport'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/transport-thumb.jpg" alt="transport-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/ttransport" onclick="trackOutboundLink('https://asyntrail.github.io/ttransport'); return false;">Transport service</a>
-                </h3>
-                <p class="portfolio-col__description">Page template without any framework, has responsive design and responsive sidebar menu. <br>Technologies: HTML5, CSS3, JS.</p>
-              </div>
-              <!-- end portfolio-col -->
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/tclinic" onclick="trackOutboundLink('https://asyntrail.github.io/tclinic'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/clinic-thumb.jpg" alt="clinic-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/tclinic" onclick="trackOutboundLink('https://asyntrail.github.io/tclinic'); return false;">Online clinic </a>
-                </h3>
-                <p class="portfolio-col__description">Online clinic page template, has responsive design and java scripts. <br>Technologies: HTML5, Bootstrap3, CSS3, JS.</p>
-              </div>
-              <!-- end portfolio-col -->
-              <!-- begin portfolio-col -->
-              <div class="portfolio-col">
-                <a href="https://asyntrail.github.io/reckon" onclick="trackOutboundLink('https://asyntrail.github.io/reckon'); return false;" class="portfolio-col__animation icon-new-tab">
-                  <img class="portfolio-col__img " src="img/reckon-thumb.jpg" alt="Reckon-thumb" />
-                </a>
-                <h3 class="portfolio-col__title">
-                  <a href="https://asyntrail.github.io/reckon" onclick="trackOutboundLink('https://asyntrail.github.io/reckon'); return false;">Reckon beta</a>
-                </h3>
-                <p class="portfolio-col__description">A simple web app, online calculator for quick calculations utilities. <br>Technologies: HTML5, CSS3, JS.</p>
-              </div>
-              <!-- end portfolio-col -->
-            </div>
-            <!-- end portfolio -->
-          </div>
-          <!-- end container -->
-        </section>
-        <!-- end portfolio-section -->
-        <!-- begin about-section -->
-        <section class="about-section" id="about">
-          <!-- begin container -->
-          <div class="container">
-            <h3 class="section-title">About</h3>
-            <p>Hello, my name is Vasiliy and I'm a beginner Front-End web developer. I study Web Development with Udacity (online courses) and FreeCodeCamp. I design with CSS3 and HTML5, but i have interest in javascript programming. I love building websites, constantly learning and expanding my skills. <br> I use: HTML5, CSS3, preprocessor (Sass), JavaScript, jQuery. <br> I am also proficient: Bootstrap, Git, WordPress, Gulp.js, Flexbox.</p>
-          </div>
-          <!-- end container -->
-        </section>
-        <!-- end about-section -->
-        <!-- begin contact-section -->
-        <section class="contact-section" id="contact">
-          <h3 class="section-title">Contact</h3>
-          <!-- begin contact -->
-          <div class="contact">
-            <p class="contact__description"> If you have any questions, please contact me.</p>
-            <a href="mailto:asyntrail@gmail.com" role="button" class="contact__btn">Send Email</a>
-            <a href="https://www.facebook.com/asyntrail" role="button" onclick=" trackOutboundLink('https://www.facebook.com/asyntrail'); return false;" class="contact__btn btn-blue">Facebook</a>
-            <a href="https://github.com/asyntrail" role="button" onclick=" trackOutboundLink('https://github.com/asyntrail'); return false;" class="contact__btn btn-green">Github</a>
-          </div>
-          <!-- end contact -->
-        </section>
-        <!-- end contact-section -->
-      </main>
-      <!-- end main -->
-      <footer>
-        <span> Vasiliy Pokotylo © 2022</span>
-      </footer>
+        <!-- begin header -->
+        <header class="header" id="header">
+            <!-- begin nav -->
+            <nav class="nav" id="navbar">
+                <ul>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><a class="nav-link" href="#about">About </a></li>
+                    <li><a class="nav-link" href="#portfolio-section">Portfolio</a></li>
+                </ul>
+            </nav>
+            <!-- end nav -->
+        </header>
+        <!-- end header -->
+        <!-- begin main -->
+        <main class="main">
+            <!-- begin welcome-section -->
+            <section class="welcome-section" id="welcome-section">
+                <p>Vasiliy Pokotylo</p>
+                <h1 class="welcome-section__title">Front-end Developer</h1>
+                <p class="welcome-section__description">Hello and welcome to my personal portfolio website!</p>
+                <a class="welcome-section__button" href="#portfolio-section">VIEW PORTFOLIO</a>
+            </section>
+            <!-- end welcome-section -->
+            <!-- begin portfolio-section -->
+            <section class="portfolio-section" id="portfolio-section">
+                <h3 class="section-title">Portfolio</h3>
+                <!-- begin container -->
+                <div class="container">
+                    <!-- begin portfolio -->
+                    <div class="portfolio clearfix">
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/reckon" onclick="trackOutboundLink('https://asyntrail.github.io/reckon'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/reckon-thumb.jpg" alt="Reckon-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/reckon" onclick="trackOutboundLink('https://asyntrail.github.io/reckon'); return false;">Reckon beta</a>
+                            </h3>
+                            <p class="portfolio-col__description">A simple web app, online calculator for quick calculations utilities. <br>Technologies: HTML5, CSS3, JS.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/trestaurant" onclick="trackOutboundLink('https://asyntrail.github.io/trestaurant'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/restaurant-thumb.jpg" alt="restaurant-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/trestaurant" onclick="trackOutboundLink('https://asyntrail.github.io/trestaurant'); return false;">Restaurant service </a>
+                            </h3>
+                            <p class="portfolio-col__description">Restaurant page template, has responsive design and javascripts. <br>Technologies: HTML5, Bootstrap3, CSS3, JS.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/tdisplay" onclick="trackOutboundLink('https://asyntrail.github.io/tdisplay'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/display-thumb.jpg" alt="display-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/tdisplay" onclick="trackOutboundLink('https://asyntrail.github.io/tdisplay'); return false;">Display </a>
+                            </h3>
+                            <p class="portfolio-col__description">Minisite template for WordPress theme. Has responsive design and a slider Slick. <br>Technologies: HTML5, CSS3, JS.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/tshaker" onclick="trackOutboundLink('https://asyntrail.github.io/tshaker'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/shaker-thumb.jpg" alt="shaker-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/tshaker" onclick="trackOutboundLink('https://asyntrail.github.io/tshaker'); return false;">Shaker </a>
+                            </h3>
+                            <p class="portfolio-col__description">Responsive template with slider and PopUp Image module.<br>Technologies: HTML5, CSS3, JS, Slick slider, Fancybox3.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/ttransport" onclick="trackOutboundLink('https://asyntrail.github.io/ttransport'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/transport-thumb.jpg" alt="transport-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/ttransport" onclick="trackOutboundLink('https://asyntrail.github.io/ttransport'); return false;">Transport service</a>
+                            </h3>
+                            <p class="portfolio-col__description">Page template without any framework, has responsive design and responsive sidebar menu. <br>Technologies: HTML5, CSS3, JS.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                        <!-- begin portfolio-col -->
+                        <div class="portfolio-col">
+                            <a href="https://asyntrail.github.io/tclinic" onclick="trackOutboundLink('https://asyntrail.github.io/tclinic'); return false;" class="portfolio-col__animation icon-new-tab">
+                                <img class="portfolio-col__img " src="img/clinic-thumb.jpg" alt="clinic-thumb" />
+                            </a>
+                            <h3 class="portfolio-col__title">
+                                <a href="https://asyntrail.github.io/tclinic" onclick="trackOutboundLink('https://asyntrail.github.io/tclinic'); return false;">Online clinic </a>
+                            </h3>
+                            <p class="portfolio-col__description">Online clinic page template, has responsive design and java scripts. <br>Technologies: HTML5, Bootstrap3, CSS3, JS.</p>
+                        </div>
+                        <!-- end portfolio-col -->
+                    </div>
+                    <!-- end portfolio -->
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end portfolio-section -->
+            <!-- begin about-section -->
+            <section class="about-section" id="about">
+                <!-- begin container -->
+                <div class="container">
+                    <h3 class="section-title">About</h3>
+                    <p>Hello, my name is Vasiliy and I'm a beginner Front-End web developer. I study Web Development with Udacity (online courses) and FreeCodeCamp. I design with CSS3 and HTML5, but i have interest in javascript programming. I love building
+                        websites, constantly learning and expanding my skills. <br> I use: HTML5, CSS3, preprocessor (Sass), JavaScript, jQuery, ReactJS. <br> I am also proficient: Git, WordPress, Bootstrap, Flexbox, Gulp.js.</p>
+                </div>
+                <!-- end container -->
+            </section>
+            <!-- end about-section -->
+            <!-- begin contact-section -->
+            <section class="contact-section" id="contact">
+                <h3 class="section-title">Contact</h3>
+                <!-- begin contact -->
+                <div class="contact">
+                    <p class="contact__description"> If you have any questions, please contact me.</p>
+                    <a href="mailto:asyntrail@gmail.com" role="button" class="contact__btn">Send Email</a>
+                    <a href="https://www.facebook.com/asyntrail" role="button" onclick=" trackOutboundLink('https://www.facebook.com/asyntrail'); return false;" class="contact__btn btn-blue">Facebook</a>
+                    <a href="https://github.com/asyntrail" role="button" onclick=" trackOutboundLink('https://github.com/asyntrail'); return false;" class="contact__btn btn-green">Github</a>
+                </div>
+                <!-- end contact -->
+            </section>
+            <!-- end contact-section -->
+        </main>
+        <!-- end main -->
+        <footer>
+            <span> Vasiliy Pokotylo © 2022</span>
+        </footer>
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102741315-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-      function gtag()
-      {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-102741315-1');
-      var trackOutboundLink = function(url)
-      {
-        gtag('event', 'click',
-        {
-          'event_category': 'outbound',
-          'event_label': url,
-          'transport_type': 'beacon',
-          'event_callback': function()
-          {
-            window.open(url);
-          }
-        });
-      }
-
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-102741315-1');
+        var trackOutboundLink = function(url) {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': url,
+                'transport_type': 'beacon',
+                'event_callback': function() {
+                    window.open(url);
+                }
+            });
+        }
     </script>
     <!-- END scripts -->
-  </body>
+</body>
+
 </html>
