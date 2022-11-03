@@ -1,197 +1,101 @@
-const date = new Date().toLocaleDateString();
-document.getElementById("current_date").innerHTML = date;
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "js/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./app.js");
+/******/ })
+/************************************************************************/
+/******/ ({
 
-function switches() {
-    const x = document.querySelectorAll(".focus");
-    for (let i = 0; i < x.length; i++) {
-        x[i].classList.toggle('general-mod');
-    }
-    const y = document.querySelectorAll(".delete-input");
-    for (let i = 0; i < y.length; i++) {
-        y[i].classList.toggle('add-input');
-    }
+/***/ "./app.js":
+/*!****************!*\
+  !*** ./app.js ***!
+  \****************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-    const b = document.getElementsByName('hide');
-    for (let i = 0; i < b.length; i++) {
-        b[i].toggleAttribute("disabled");
-        // b[i].disabled = true;
-    }
+"use strict";
+eval("\n\nvar date = new Date().toLocaleDateString();\ndocument.getElementById(\"current_date\").innerHTML = date;\n\nfunction switches() {\n    var x = document.querySelectorAll(\".focus\");\n    for (var i = 0; i < x.length; i++) {\n        x[i].classList.toggle('general-mod');\n    }\n    var y = document.querySelectorAll(\".delete-input\");\n    for (var _i = 0; _i < y.length; _i++) {\n        y[_i].classList.toggle('add-input');\n    }\n\n    var b = document.getElementsByName('hide');\n    for (var _i2 = 0; _i2 < b.length; _i2++) {\n        b[_i2].toggleAttribute(\"disabled\");\n        // b[i].disabled = true;\n    }\n}\ndocument.getElementById('period').addEventListener('click', switches);\n\ndocument.getElementById(\"personsTotal\").innerHTML = \"Очік\";\n\nfunction checkAndRepl() {\n    var b = document.getElementsByTagName('input');\n\n    function repl() {\n\n        for (var i = 0; i < b.length; i++) {\n\n            b[i].value = b[i].value.replace(/,/g, '.');\n        }\n    }\n    for (var i = 0; i < b.length; i++) {\n        document.getElementsByTagName('input')[i].addEventListener(\"change\", repl);\n    }\n}\n\ncheckAndRepl();\n\nfunction check() {\n    var cwt = +document.getElementById('cwTariff').value;\n    var cwc = +document.getElementById('cwCur').value;\n    var cwp = +document.getElementById('cwPre').value;\n    var cwu = Math.round((cwc - cwp) * 10) / 10;\n    document.getElementById(\"cwUsage\").innerHTML = cwu;\n    var cws = cwu * cwt;\n    var cwss = Math.ceil(cws * 100) / 100;\n    document.getElementById(\"cwSum\").innerHTML = cwss;\n\n    var hwt = +document.getElementById('hwTariff').value;\n    var hwc = +document.getElementById('hwCur').value;\n    var hwp = +document.getElementById('hwPre').value;\n    var hwu = Math.round((hwc - hwp) * 10) / 10;\n    document.getElementById(\"hwUsage\").innerHTML = hwu;\n    var hws = hwu * hwt;\n    var hwss = Math.ceil(hws * 100) / 100;\n    document.getElementById(\"hwSum\").innerHTML = hwss;\n\n    var owt = +document.getElementById('owTariff').value;\n    var owc = +document.getElementById('owCur').value;\n    var owp = +document.getElementById('owPre').value;\n    var owu = Math.round((owc - owp) * 10) / 10;\n    document.getElementById(\"owUsage\").innerHTML = owu;\n    var ows = owu * owt;\n    var owss = Math.ceil(ows * 100) / 100;\n    document.getElementById(\"owSum\").innerHTML = owss;\n\n    var h = +document.getElementById('heat').value;\n\n    document.getElementById(\"heats\").innerHTML = h;\n\n    var ct1 = +document.getElementById('cont1').value;\n    var ct2 = +document.getElementById('cont2').value;\n    var cts = Math.ceil((ct1 + ct2) * 100) / 100;\n    document.getElementById(\"conts\").innerHTML = cts;\n\n    var e = +document.getElementById('elec').value;\n    document.getElementById(\"elecs\").innerHTML = e;\n\n    var g = +document.getElementById('gaz').value;\n    document.getElementById(\"gazs\").innerHTML = g;\n\n    var k = +document.getElementById('kom').value;\n    document.getElementById(\"koms\").innerHTML = k;\n\n    var ex = +document.getElementById('export').value;\n    document.getElementById(\"exports\").innerHTML = ex;\n\n    var ph = +document.getElementById('phone').value;\n    document.getElementById(\"phones\").innerHTML = ph;\n\n    var ed = +document.getElementById('edi').value;\n    document.getElementById(\"edis\").innerHTML = ed;\n\n    var tot = (cwss * 100 + hwss * 100 + owss * 100 + e * 100 + g * 100 - ed * 100 + h * 100 + cts * 100 + k * 100 + ex * 100 + ph * 100) / 100;\n\n    document.getElementById(\"total\").innerHTML = tot;\n\n    var ps = (cwss * 100 + hwss * 100 + owss * 100 + e * 100 + g * 100 - ed * 100) / 100;\n    document.getElementById(\"personSum\").innerHTML = ps;\n    var totPers = +document.getElementById('totalPerson').value;\n\n    var gs = (h * 100 + cts * 100 + k * 100 + ex * 100 + ph * 100) / 100;\n    document.getElementById(\"generalSum\").innerHTML = gs;\n    var gd = +document.getElementById('genDevi').value;\n    var gsd = Math.ceil(gs / gd * 100) / 100;\n    document.getElementById(\"genSumDevi\").innerHTML = gsd;\n\n    var grp1 = +document.getElementById('group1').value;\n    var grp2 = +document.getElementById('group2').value;\n\n    if (document.getElementById('period').checked) {\n\n        var pall = +document.getElementById('periodAll').value;\n        var pab = +document.getElementById('periodAbsence').value; // period absence\n        document.getElementById(\"copyPeriodAll\").innerHTML = pall;\n\n        var x = document.querySelectorAll(\".period-mod\");\n        for (var i = 0; i < x.length; i++) {\n            x[i].classList.add('general-mod');\n        }\n\n        var averSumPd = Math.ceil(ps / pall * 100) / 100; // average sum for all period\n        document.getElementById(\"persAvrg\").innerHTML = averSumPd;\n        var dap = pall - pab; // dl -day all pesons present\n        var avSumPdAbs = Math.ceil(pab * averSumPd * 100) / 100; // average sum for period absence\n        var avSumPdTot = Math.ceil(dap * averSumPd * 100) / 100; // average sum for period total\n        var absPers = +document.getElementById('absentPerson').value;\n        var pl = totPers - absPers; // person left\n        document.getElementById(\"leftPersons\").innerHTML = \"\\u0437\\u0430 \" + pab + \" \\u0434\\u043D\\u0456 \" + avSumPdAbs + \" \\u043F\\u043E\\u0434\\u0456\\u043B\\u0438\\u0442\\u0438 \\u043D\\u0430 \" + pl + \" \\u043E\\u0441\\u0456\\u0431\";\n\n        var devSumPerLef = Math.ceil(avSumPdAbs / pl * 100) / 100; // the average sum for the period of absence divided by the person left\n        document.getElementById(\"devLeftPersons\").innerHTML = devSumPerLef;\n        document.getElementById(\"personsTotal\").innerHTML = \"\\u0437\\u0430 \" + dap + \" \\u0434\\u043D\\u0456 \" + avSumPdTot + \" \\u043F\\u043E\\u0434\\u0456\\u043B\\u0438\\u0442\\u0438 \\u043D\\u0430 \" + totPers + \" \\u043E\\u0441\\u0456\\u0431\";\n        var devSumPerAll = Math.ceil(avSumPdTot / totPers * 100) / 100; // the average sum for the period of total divided by the all persons\n        document.getElementById(\"devTotPerSum\").innerHTML = devSumPerAll;\n\n        var grabs1 = +document.getElementById('groupAbs1').value;\n        var grpleft1 = grp1 - grabs1;\n        var pys1 = void 0;\n        if (grpleft1 > 0) {\n            pys1 = Math.ceil((gsd + devSumPerAll * grp1 + devSumPerLef * grpleft1) * 100) / 100;\n        } else if (grpleft1 === 0) {\n            pys1 = Math.ceil((gsd + devSumPerAll * grp1) * 100) / 100;\n        }\n        var grabs2 = +document.getElementById('groupAbs2').value;\n        var grpleft2 = grp2 - grabs2;\n        var pys2 = void 0;\n        if (grpleft2 > 0) {\n            pys2 = Math.ceil((gsd + devSumPerAll * grp2 + devSumPerLef * grpleft2) * 100) / 100;\n        } else if (grpleft2 === 0) {\n            pys2 = Math.ceil((gsd + devSumPerAll * grp2) * 100) / 100;\n        }\n        document.getElementById(\"paySum1\").innerHTML = pys1;\n        document.getElementById(\"paySum2\").innerHTML = pys2;\n    } else {\n        var psd = Math.ceil(ps / totPers * 100) / 100;\n        var _x = document.querySelectorAll(\".period-mod\");\n        for (var _i3 = 0; _i3 < _x.length; _i3++) {\n            _x[_i3].classList.remove('general-mod');\n        }\n        document.getElementById(\"personsTotal\").innerHTML = \"\\u041F\\u043E\\u0434\\u0456\\u043B\\u0438\\u0442\\u0438 \\u043D\\u0430 \" + totPers;\n        document.getElementById(\"devTotPerSum\").innerHTML = psd;\n\n        var _pys = Math.ceil((gsd + psd * grp1) * 100) / 100;\n        var _pys2 = Math.ceil((gsd + psd * grp2) * 100) / 100;\n        document.getElementById(\"paySum1\").innerHTML = _pys;\n        document.getElementById(\"paySum2\").innerHTML = _pys2;\n    }\n}\nvar form = document.getElementById('form');\nform.addEventListener('submit', function (event) {\n    // submit event detected\n\n    check();\n\n    event.preventDefault();\n});\n\nfunction mail() {\n    var x = document.querySelectorAll(\".contact\");\n    for (var i = 0; i < x.length; i++) {\n        x[i].classList.toggle('visible');\n    }\n}\n\ndocument.getElementById('toggle').addEventListener('click', mail);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hcHAuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vc3JjL2pzL2FwcC5qcz8wMzU0Il0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGRhdGUgPSBuZXcgRGF0ZSgpLnRvTG9jYWxlRGF0ZVN0cmluZygpO1xuZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJjdXJyZW50X2RhdGVcIikuaW5uZXJIVE1MID0gZGF0ZTtcblxuZnVuY3Rpb24gc3dpdGNoZXMoKSB7XG4gICAgY29uc3QgeCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIuZm9jdXNcIik7XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCB4Lmxlbmd0aDsgaSsrKSB7XG4gICAgICAgIHhbaV0uY2xhc3NMaXN0LnRvZ2dsZSgnZ2VuZXJhbC1tb2QnKTtcbiAgICB9XG4gICAgY29uc3QgeSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIuZGVsZXRlLWlucHV0XCIpO1xuICAgIGZvciAobGV0IGkgPSAwOyBpIDwgeS5sZW5ndGg7IGkrKykge1xuICAgICAgICB5W2ldLmNsYXNzTGlzdC50b2dnbGUoJ2FkZC1pbnB1dCcpO1xuICAgIH1cblxuICAgIGNvbnN0IGIgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5TmFtZSgnaGlkZScpO1xuICAgIGZvciAobGV0IGkgPSAwOyBpIDwgYi5sZW5ndGg7IGkrKykge1xuICAgICAgICBiW2ldLnRvZ2dsZUF0dHJpYnV0ZShcImRpc2FibGVkXCIpO1xuICAgICAgICAvLyBiW2ldLmRpc2FibGVkID0gdHJ1ZTtcbiAgICB9XG5cblxufVxuZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3BlcmlvZCcpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgc3dpdGNoZXMpO1xuXG5kb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInBlcnNvbnNUb3RhbFwiKS5pbm5lckhUTUwgPSBcItCe0YfRltC6XCI7XG5cbmZ1bmN0aW9uIGNoZWNrQW5kUmVwbCgpIHtcbiAgICBjb25zdCBiID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2lucHV0Jyk7XG5cbiAgICBmdW5jdGlvbiByZXBsKCkge1xuXG4gICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgYi5sZW5ndGg7IGkrKykge1xuXG4gICAgICAgICAgICBiW2ldLnZhbHVlID0gYltpXS52YWx1ZS5yZXBsYWNlKC8sL2csICcuJyk7XG4gICAgICAgIH1cbiAgICB9XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBiLmxlbmd0aDsgaSsrKSB7XG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdpbnB1dCcpW2ldLmFkZEV2ZW50TGlzdGVuZXIoXCJjaGFuZ2VcIiwgcmVwbCk7XG4gICAgfVxufVxuXG5jaGVja0FuZFJlcGwoKTtcblxuZnVuY3Rpb24gY2hlY2soKSB7XG4gICAgY29uc3QgY3d0ID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjd1RhcmlmZicpLnZhbHVlO1xuICAgIGNvbnN0IGN3YyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY3dDdXInKS52YWx1ZTtcbiAgICBjb25zdCBjd3AgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N3UHJlJykudmFsdWU7XG4gICAgY29uc3QgY3d1ID0gKE1hdGgucm91bmQoKGN3YyAtIGN3cCkgKiAxMCkgLyAxMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJjd1VzYWdlXCIpLmlubmVySFRNTCA9IGN3dTtcbiAgICBjb25zdCBjd3MgPSBjd3UgKiBjd3Q7XG4gICAgY29uc3QgY3dzcyA9IChNYXRoLmNlaWwoY3dzICogMTAwKSAvIDEwMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJjd1N1bVwiKS5pbm5lckhUTUwgPSBjd3NzO1xuXG4gICAgY29uc3QgaHd0ID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdod1RhcmlmZicpLnZhbHVlO1xuICAgIGNvbnN0IGh3YyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaHdDdXInKS52YWx1ZTtcbiAgICBjb25zdCBod3AgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2h3UHJlJykudmFsdWU7XG4gICAgY29uc3QgaHd1ID0gKE1hdGgucm91bmQoKGh3YyAtIGh3cCkgKiAxMCkgLyAxMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJod1VzYWdlXCIpLmlubmVySFRNTCA9IGh3dTtcbiAgICBjb25zdCBod3MgPSBod3UgKiBod3Q7XG4gICAgY29uc3QgaHdzcyA9IChNYXRoLmNlaWwoaHdzICogMTAwKSAvIDEwMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJod1N1bVwiKS5pbm5lckhUTUwgPSBod3NzO1xuXG4gICAgY29uc3Qgb3d0ID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdvd1RhcmlmZicpLnZhbHVlO1xuICAgIGNvbnN0IG93YyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnb3dDdXInKS52YWx1ZTtcbiAgICBjb25zdCBvd3AgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ293UHJlJykudmFsdWU7XG4gICAgY29uc3Qgb3d1ID0gKE1hdGgucm91bmQoKG93YyAtIG93cCkgKiAxMCkgLyAxMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJvd1VzYWdlXCIpLmlubmVySFRNTCA9IG93dTtcbiAgICBjb25zdCBvd3MgPSBvd3UgKiBvd3Q7XG4gICAgY29uc3Qgb3dzcyA9IChNYXRoLmNlaWwob3dzICogMTAwKSAvIDEwMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJvd1N1bVwiKS5pbm5lckhUTUwgPSBvd3NzO1xuXG4gICAgY29uc3QgaCA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaGVhdCcpLnZhbHVlO1xuXG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJoZWF0c1wiKS5pbm5lckhUTUwgPSBoO1xuXG4gICAgY29uc3QgY3QxID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb250MScpLnZhbHVlO1xuICAgIGNvbnN0IGN0MiA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29udDInKS52YWx1ZTtcbiAgICBjb25zdCBjdHMgPSAoTWF0aC5jZWlsKChjdDEgKyBjdDIpICogMTAwKSAvIDEwMCk7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJjb250c1wiKS5pbm5lckhUTUwgPSBjdHM7XG5cbiAgICBjb25zdCBlID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdlbGVjJykudmFsdWU7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJlbGVjc1wiKS5pbm5lckhUTUwgPSBlO1xuXG4gICAgY29uc3QgZyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZ2F6JykudmFsdWU7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJnYXpzXCIpLmlubmVySFRNTCA9IGc7XG5cbiAgICBjb25zdCBrID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdrb20nKS52YWx1ZTtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImtvbXNcIikuaW5uZXJIVE1MID0gaztcblxuICAgIGNvbnN0IGV4ID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdleHBvcnQnKS52YWx1ZTtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4cG9ydHNcIikuaW5uZXJIVE1MID0gZXg7XG5cbiAgICBjb25zdCBwaCA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncGhvbmUnKS52YWx1ZTtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInBob25lc1wiKS5pbm5lckhUTUwgPSBwaDtcblxuICAgIGNvbnN0IGVkID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdlZGknKS52YWx1ZTtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImVkaXNcIikuaW5uZXJIVE1MID0gZWQ7XG5cblxuICAgIGNvbnN0IHRvdCA9ICgoKGN3c3MgKiAxMDAgKyBod3NzICogMTAwICsgb3dzcyAqIDEwMCArIGUgKiAxMDAgKyBnICogMTAwKSAtIGVkICogMTAwKSArIGggKiAxMDAgKyBjdHMgKiAxMDAgKyBrICogMTAwICsgZXggKiAxMDAgKyBwaCAqIDEwMCkgLyAxMDA7XG5cbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInRvdGFsXCIpLmlubmVySFRNTCA9IHRvdDtcblxuICAgIGNvbnN0IHBzID0gKChjd3NzICogMTAwICsgaHdzcyAqIDEwMCArIG93c3MgKiAxMDAgKyBlICogMTAwICsgZyAqIDEwMCkgLSBlZCAqIDEwMCkgLyAxMDA7XG4gICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJwZXJzb25TdW1cIikuaW5uZXJIVE1MID0gcHM7XG4gICAgY29uc3QgdG90UGVycyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndG90YWxQZXJzb24nKS52YWx1ZTtcblxuXG4gICAgY29uc3QgZ3MgPSAoaCAqIDEwMCArIGN0cyAqIDEwMCArIGsgKiAxMDAgKyBleCAqIDEwMCArIHBoICogMTAwKSAvIDEwMDtcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImdlbmVyYWxTdW1cIikuaW5uZXJIVE1MID0gZ3M7XG4gICAgY29uc3QgZ2QgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2dlbkRldmknKS52YWx1ZTtcbiAgICBjb25zdCBnc2QgPSAoTWF0aC5jZWlsKChncyAvIGdkKSAqIDEwMCkgLyAxMDApO1xuICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZ2VuU3VtRGV2aVwiKS5pbm5lckhUTUwgPSBnc2Q7XG5cbiAgICBjb25zdCBncnAxID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdncm91cDEnKS52YWx1ZTtcbiAgICBjb25zdCBncnAyID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdncm91cDInKS52YWx1ZTtcblxuXG5cbiAgICBpZiAoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3BlcmlvZCcpLmNoZWNrZWQpIHtcblxuICAgICAgICBjb25zdCBwYWxsID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwZXJpb2RBbGwnKS52YWx1ZTtcbiAgICAgICAgY29uc3QgcGFiID0gK2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwZXJpb2RBYnNlbmNlJykudmFsdWU7IC8vIHBlcmlvZCBhYnNlbmNlXG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiY29weVBlcmlvZEFsbFwiKS5pbm5lckhUTUwgPSBwYWxsO1xuXG4gICAgICAgIGNvbnN0IHggPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnBlcmlvZC1tb2RcIik7XG4gICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgeC5sZW5ndGg7IGkrKykge1xuICAgICAgICAgICAgeFtpXS5jbGFzc0xpc3QuYWRkKCdnZW5lcmFsLW1vZCcpO1xuICAgICAgICB9XG5cbiAgICAgICAgY29uc3QgYXZlclN1bVBkID0gKE1hdGguY2VpbCgocHMgLyBwYWxsKSAqIDEwMCkgLyAxMDApOyAvLyBhdmVyYWdlIHN1bSBmb3IgYWxsIHBlcmlvZFxuICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInBlcnNBdnJnXCIpLmlubmVySFRNTCA9IGF2ZXJTdW1QZDtcbiAgICAgICAgY29uc3QgZGFwID0gcGFsbCAtIHBhYjsgLy8gZGwgLWRheSBhbGwgcGVzb25zIHByZXNlbnRcbiAgICAgICAgY29uc3QgYXZTdW1QZEFicyA9IChNYXRoLmNlaWwoKHBhYiAqIGF2ZXJTdW1QZCkgKiAxMDApIC8gMTAwKTsgLy8gYXZlcmFnZSBzdW0gZm9yIHBlcmlvZCBhYnNlbmNlXG4gICAgICAgIGNvbnN0IGF2U3VtUGRUb3QgPSAoTWF0aC5jZWlsKChkYXAgKiBhdmVyU3VtUGQpICogMTAwKSAvIDEwMCk7IC8vIGF2ZXJhZ2Ugc3VtIGZvciBwZXJpb2QgdG90YWxcbiAgICAgICAgY29uc3QgYWJzUGVycyA9ICtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYWJzZW50UGVyc29uJykudmFsdWU7XG4gICAgICAgIGNvbnN0IHBsID0gdG90UGVycyAtIGFic1BlcnM7IC8vIHBlcnNvbiBsZWZ0XG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwibGVmdFBlcnNvbnNcIikuaW5uZXJIVE1MID0gYNC30LAgJHsgIHBhYiAgfSDQtNC90ZYgJHthdlN1bVBkQWJzICB9INC/0L7QtNGW0LvQuNGC0Lgg0L3QsCAkeyAgcGwgIH0g0L7RgdGW0LFgO1xuXG4gICAgICAgIGNvbnN0IGRldlN1bVBlckxlZiA9IChNYXRoLmNlaWwoKGF2U3VtUGRBYnMgLyBwbCkgKiAxMDApIC8gMTAwKTsgLy8gdGhlIGF2ZXJhZ2Ugc3VtIGZvciB0aGUgcGVyaW9kIG9mIGFic2VuY2UgZGl2aWRlZCBieSB0aGUgcGVyc29uIGxlZnRcbiAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJkZXZMZWZ0UGVyc29uc1wiKS5pbm5lckhUTUwgPSBkZXZTdW1QZXJMZWY7XG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwicGVyc29uc1RvdGFsXCIpLmlubmVySFRNTCA9IGDQt9CwICR7ICBkYXAgIH0g0LTQvdGWICR7YXZTdW1QZFRvdCAgfSDQv9C+0LTRltC70LjRgtC4INC90LAgJHsgIHRvdFBlcnMgIH0g0L7RgdGW0LFgO1xuICAgICAgICBjb25zdCBkZXZTdW1QZXJBbGwgPSAoTWF0aC5jZWlsKChhdlN1bVBkVG90IC8gdG90UGVycykgKiAxMDApIC8gMTAwKTsgLy8gdGhlIGF2ZXJhZ2Ugc3VtIGZvciB0aGUgcGVyaW9kIG9mIHRvdGFsIGRpdmlkZWQgYnkgdGhlIGFsbCBwZXJzb25zXG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZGV2VG90UGVyU3VtXCIpLmlubmVySFRNTCA9IGRldlN1bVBlckFsbDtcblxuICAgICAgICBjb25zdCBncmFiczEgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2dyb3VwQWJzMScpLnZhbHVlO1xuICAgICAgICBjb25zdCBncnBsZWZ0MSA9IGdycDEgLSBncmFiczE7XG4gICAgICAgIGxldCBweXMxO1xuICAgICAgICBpZiAoZ3JwbGVmdDEgPiAwKSB7XG4gICAgICAgICAgICBweXMxID0gKE1hdGguY2VpbCgoZ3NkICsgKGRldlN1bVBlckFsbCAqIGdycDEpICsgKGRldlN1bVBlckxlZiAqIGdycGxlZnQxKSkgKiAxMDApIC8gMTAwKTtcbiAgICAgICAgfSBlbHNlIGlmIChncnBsZWZ0MSA9PT0gMCkge1xuICAgICAgICAgICAgcHlzMSA9IChNYXRoLmNlaWwoKGdzZCArIChkZXZTdW1QZXJBbGwgKiBncnAxKSkgKiAxMDApIC8gMTAwKTtcbiAgICAgICAgfVxuICAgICAgICBjb25zdCBncmFiczIgPSArZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2dyb3VwQWJzMicpLnZhbHVlO1xuICAgICAgICBjb25zdCBncnBsZWZ0MiA9IGdycDIgLSBncmFiczI7XG4gICAgICAgIGxldCBweXMyO1xuICAgICAgICBpZiAoZ3JwbGVmdDIgPiAwKSB7XG4gICAgICAgICAgICBweXMyID0gKE1hdGguY2VpbCgoZ3NkICsgKGRldlN1bVBlckFsbCAqIGdycDIpICsgKGRldlN1bVBlckxlZiAqIGdycGxlZnQyKSkgKiAxMDApIC8gMTAwKTtcbiAgICAgICAgfSBlbHNlIGlmIChncnBsZWZ0MiA9PT0gMCkge1xuICAgICAgICAgICAgcHlzMiA9IChNYXRoLmNlaWwoKGdzZCArIChkZXZTdW1QZXJBbGwgKiBncnAyKSkgKiAxMDApIC8gMTAwKTtcbiAgICAgICAgfVxuICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInBheVN1bTFcIikuaW5uZXJIVE1MID0gcHlzMTtcbiAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJwYXlTdW0yXCIpLmlubmVySFRNTCA9IHB5czI7XG5cbiAgICB9IGVsc2Uge1xuICAgICAgICBjb25zdCBwc2QgPSAoTWF0aC5jZWlsKChwcyAvIHRvdFBlcnMpICogMTAwKSAvIDEwMCk7XG4gICAgICAgIGNvbnN0IHggPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnBlcmlvZC1tb2RcIik7XG4gICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgeC5sZW5ndGg7IGkrKykge1xuICAgICAgICAgICAgeFtpXS5jbGFzc0xpc3QucmVtb3ZlKCdnZW5lcmFsLW1vZCcpO1xuICAgICAgICB9XG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwicGVyc29uc1RvdGFsXCIpLmlubmVySFRNTCA9IGDQn9C+0LTRltC70LjRgtC4INC90LAgJHsgIHRvdFBlcnN9YDtcbiAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJkZXZUb3RQZXJTdW1cIikuaW5uZXJIVE1MID0gcHNkO1xuXG4gICAgICAgIGNvbnN0IHB5czEgPSAoTWF0aC5jZWlsKChnc2QgKyAocHNkICogZ3JwMSkpICogMTAwKSAvIDEwMCk7XG4gICAgICAgIGNvbnN0IHB5czIgPSAoTWF0aC5jZWlsKChnc2QgKyAocHNkICogZ3JwMikpICogMTAwKSAvIDEwMCk7XG4gICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwicGF5U3VtMVwiKS5pbm5lckhUTUwgPSBweXMxO1xuICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcInBheVN1bTJcIikuaW5uZXJIVE1MID0gcHlzMjtcbiAgICB9XG5cblxufVxuY29uc3QgZm9ybSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdmb3JtJylcbmZvcm0uYWRkRXZlbnRMaXN0ZW5lcignc3VibWl0JywgZXZlbnQgPT4ge1xuICAgIC8vIHN1Ym1pdCBldmVudCBkZXRlY3RlZFxuXG4gICAgY2hlY2soKTtcblxuICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KClcbn0pXG5cbmZ1bmN0aW9uIG1haWwoKSB7XG4gICAgY29uc3QgeCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIuY29udGFjdFwiKTtcbiAgICBmb3IgKGxldCBpID0gMDsgaSA8IHgubGVuZ3RoOyBpKyspIHtcbiAgICAgICAgeFtpXS5jbGFzc0xpc3QudG9nZ2xlKCd2aXNpYmxlJyk7XG4gICAgfVxufVxuXG5kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndG9nZ2xlJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBtYWlsKTsiXSwibWFwcGluZ3MiOiI7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFHQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./app.js\n");
 
+/***/ })
 
-}
-document.getElementById('period').addEventListener('click', switches);
-
-document.getElementById("personsTotal").innerHTML = "Очік";
-
-function checkAndRepl() {
-    const b = document.getElementsByTagName('input');
-
-    function repl() {
-
-        for (let i = 0; i < b.length; i++) {
-
-            b[i].value = b[i].value.replace(/,/g, '.');
-        }
-    }
-    for (let i = 0; i < b.length; i++) {
-        document.getElementsByTagName('input')[i].addEventListener("change", repl);
-    }
-}
-
-checkAndRepl();
-
-function check() {
-    const cwt = +document.getElementById('cwTariff').value;
-    const cwc = +document.getElementById('cwCur').value;
-    const cwp = +document.getElementById('cwPre').value;
-    const cwu = (Math.round((cwc - cwp) * 10) / 10);
-    document.getElementById("cwUsage").innerHTML = cwu;
-    const cws = cwu * cwt;
-    const cwss = (Math.ceil(cws * 100) / 100);
-    document.getElementById("cwSum").innerHTML = cwss;
-
-    const hwt = +document.getElementById('hwTariff').value;
-    const hwc = +document.getElementById('hwCur').value;
-    const hwp = +document.getElementById('hwPre').value;
-    const hwu = (Math.round((hwc - hwp) * 10) / 10);
-    document.getElementById("hwUsage").innerHTML = hwu;
-    const hws = hwu * hwt;
-    const hwss = (Math.ceil(hws * 100) / 100);
-    document.getElementById("hwSum").innerHTML = hwss;
-
-    const owt = +document.getElementById('owTariff').value;
-    const owc = +document.getElementById('owCur').value;
-    const owp = +document.getElementById('owPre').value;
-    const owu = (Math.round((owc - owp) * 10) / 10);
-    document.getElementById("owUsage").innerHTML = owu;
-    const ows = owu * owt;
-    const owss = (Math.ceil(ows * 100) / 100);
-    document.getElementById("owSum").innerHTML = owss;
-
-    const h = +document.getElementById('heat').value;
-
-    document.getElementById("heats").innerHTML = h;
-
-    const ct1 = +document.getElementById('cont1').value;
-    const ct2 = +document.getElementById('cont2').value;
-    const cts = (Math.ceil((ct1 + ct2) * 100) / 100);
-    document.getElementById("conts").innerHTML = cts;
-
-    const e = +document.getElementById('elec').value;
-    document.getElementById("elecs").innerHTML = e;
-
-    const g = +document.getElementById('gaz').value;
-    document.getElementById("gazs").innerHTML = g;
-
-    const k = +document.getElementById('kom').value;
-    document.getElementById("koms").innerHTML = k;
-
-    const ex = +document.getElementById('export').value;
-    document.getElementById("exports").innerHTML = ex;
-
-    const ph = +document.getElementById('phone').value;
-    document.getElementById("phones").innerHTML = ph;
-
-    const ed = +document.getElementById('edi').value;
-    document.getElementById("edis").innerHTML = ed;
-
-
-    const tot = (((cwss * 100 + hwss * 100 + owss * 100 + e * 100 + g * 100) - ed * 100) + h * 100 + cts * 100 + k * 100 + ex * 100 + ph * 100) / 100;
-
-    document.getElementById("total").innerHTML = tot;
-
-    const ps = ((cwss * 100 + hwss * 100 + owss * 100 + e * 100 + g * 100) - ed * 100) / 100;
-    document.getElementById("personSum").innerHTML = ps;
-    const totPers = +document.getElementById('totalPerson').value;
-
-
-    const gs = (h * 100 + cts * 100 + k * 100 + ex * 100 + ph * 100) / 100;
-    document.getElementById("generalSum").innerHTML = gs;
-    const gd = +document.getElementById('genDevi').value;
-    const gsd = (Math.ceil((gs / gd) * 100) / 100);
-    document.getElementById("genSumDevi").innerHTML = gsd;
-
-    const grp1 = +document.getElementById('group1').value;
-    const grp2 = +document.getElementById('group2').value;
-
-
-
-    if (document.getElementById('period').checked) {
-
-        const pall = +document.getElementById('periodAll').value;
-        const pab = +document.getElementById('periodAbsence').value; // period absence
-        document.getElementById("copyPeriodAll").innerHTML = pall;
-
-        const x = document.querySelectorAll(".period-mod");
-        for (let i = 0; i < x.length; i++) {
-            x[i].classList.add('general-mod');
-        }
-
-        const averSumPd = (Math.ceil((ps / pall) * 100) / 100); // average sum for all period
-        document.getElementById("persAvrg").innerHTML = averSumPd;
-        const dap = pall - pab; // dl -day all pesons present
-        const avSumPdAbs = (Math.ceil((pab * averSumPd) * 100) / 100); // average sum for period absence
-        const avSumPdTot = (Math.ceil((dap * averSumPd) * 100) / 100); // average sum for period total
-        const absPers = +document.getElementById('absentPerson').value;
-        const pl = totPers - absPers; // person left
-        document.getElementById("leftPersons").innerHTML = `за ${  pab  } дні ${avSumPdAbs  } поділити на ${  pl  } осіб`;
-
-        const devSumPerLef = (Math.ceil((avSumPdAbs / pl) * 100) / 100); // the average sum for the period of absence divided by the person left
-        document.getElementById("devLeftPersons").innerHTML = devSumPerLef;
-        document.getElementById("personsTotal").innerHTML = `за ${  dap  } дні ${avSumPdTot  } поділити на ${  totPers  } осіб`;
-        const devSumPerAll = (Math.ceil((avSumPdTot / totPers) * 100) / 100); // the average sum for the period of total divided by the all persons
-        document.getElementById("devTotPerSum").innerHTML = devSumPerAll;
-
-        const grabs1 = +document.getElementById('groupAbs1').value;
-        const grpleft1 = grp1 - grabs1;
-        let pys1;
-        if (grpleft1 > 0) {
-            pys1 = (Math.ceil((gsd + (devSumPerAll * grp1) + (devSumPerLef * grpleft1)) * 100) / 100);
-        } else if (grpleft1 === 0) {
-            pys1 = (Math.ceil((gsd + (devSumPerAll * grp1)) * 100) / 100);
-        }
-        const grabs2 = +document.getElementById('groupAbs2').value;
-        const grpleft2 = grp2 - grabs2;
-        let pys2;
-        if (grpleft2 > 0) {
-            pys2 = (Math.ceil((gsd + (devSumPerAll * grp2) + (devSumPerLef * grpleft2)) * 100) / 100);
-        } else if (grpleft2 === 0) {
-            pys2 = (Math.ceil((gsd + (devSumPerAll * grp2)) * 100) / 100);
-        }
-        document.getElementById("paySum1").innerHTML = pys1;
-        document.getElementById("paySum2").innerHTML = pys2;
-
-    } else {
-        const psd = (Math.ceil((ps / totPers) * 100) / 100);
-        const x = document.querySelectorAll(".period-mod");
-        for (let i = 0; i < x.length; i++) {
-            x[i].classList.remove('general-mod');
-        }
-        document.getElementById("personsTotal").innerHTML = `Поділити на ${  totPers}`;
-        document.getElementById("devTotPerSum").innerHTML = psd;
-
-        const pys1 = (Math.ceil((gsd + (psd * grp1)) * 100) / 100);
-        const pys2 = (Math.ceil((gsd + (psd * grp2)) * 100) / 100);
-        document.getElementById("paySum1").innerHTML = pys1;
-        document.getElementById("paySum2").innerHTML = pys2;
-    }
-
-
-}
-const form = document.getElementById('form')
-form.addEventListener('submit', event => {
-    // submit event detected
-
-    check();
-
-    event.preventDefault()
-})
-
-function mail() {
-    const x = document.querySelectorAll(".contact");
-    for (let i = 0; i < x.length; i++) {
-        x[i].classList.toggle('visible');
-    }
-}
-
-document.getElementById('toggle').addEventListener('click', mail);
+/******/ });

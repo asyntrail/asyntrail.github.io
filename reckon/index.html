@@ -1,230 +1,229 @@
 <!doctype html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Reckon (beta) online calculator</title>
-    <meta name="description" content="Онлайн калькулятор для простого розрахунку комунальних платежів, а також розподілення оплати комунальних послуг між мешканцями." />
+    <meta name="description" content="Онлайн калькулятор для спрощення розрахунку комунальних платежів, а також розподілення оплати комунальних послуг між мешканцями." />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="stylesheet" media="all" href="css/app.css" />
-</head>
-
-<body>
+  </head>
+  <body>
     <!-- BEGIN content -->
     <div class="out">
-        <!-- begin container -->
-        <div class="container">
-            <!-- begin count -->
-            <form class="count-form" id="form">
-                <table class="table1">
-                    <tr>
-                        <th></th>
-                        <th>Тариф</th>
-                        <th title="А вот и я!">Поточні</th>
-                        <th>Попередні</th>
-                        <th>Різниця</th>
-                        <th>Разом</th>
-                    </tr>
-                    <tr>
-                        <th>Холодне вод.п.</th>
-                        <td><input name="cold-water" id="cwTariff" required placeholder="-" type="tel" value="30.38" /></td>
-                        <td class="tooltip"> <span class="tooltiptext">Натисніть Tab для преключення </span> <input name="cold-water" id="cwCur" required placeholder="-" type="tel" value="" /></td>
-                        <td><input name="cold-water" id="cwPre" required placeholder="-" type="tel" value="" /></td>
-                        <td><span id="cwUsage"></span></td>
-                        <td><span id="cwSum"></span></td>
-                    </tr>
-                    <tr>
-                        <th>Гаряче вод.п.</th>
-                        <td><input name="hot-water" id="hwTariff" placeholder="-" type="tel" value="97.89" /></td>
-                        <td><input name="hot-water" id="hwCur" placeholder="-" type="tel" value="" /></td>
-                        <td><input name="hot-water" id="hwPre" placeholder="-" type="tel" value="" /></td>
-                        <td><span id="hwUsage"></span></td>
-                        <td><span id="hwSum"></span></td>
-                    </tr>
-                    <tr>
-                        <th>Відвід г.в.</th>
-                        <td><input name="out-water" id="owTariff" placeholder="-" type="tel" value="14.22" /></td>
-                        <td><input name="out-water" id="owCur" placeholder="-" type="tel" value="" /></td>
-                        <td><input name="out-water" id="owPre" placeholder="-" type="tel" value="" /></td>
-                        <td><span id="owUsage"></span></td>
-                        <td><span id="owSum"></span></td>
-                    </tr>
-                    <tr>
-                        <th>Електроенергія</th>
-                        <td><input name="electricity" id="elec" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="elecs"></span></td>
-                    </tr>
-                    <tr>
-                        <th>Газ</th>
-                        <td><input id="gaz" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="gazs"></span></td>
-                    </tr>
-                    <tr>
-                        <th>Знижка</th>
-                        <td class="discount"><input name="edit" id="edi" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="edis"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <th>Опалення</th>
-                        <td><input name="heating" id="heat" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="heats"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <th>Внески ЦО</th>
-                        <td><input name="сontribution" id="cont1" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="2"> Внески ГВП </td>
-                        <td><input name="сontribution" id="cont2" placeholder="-" type="tel" value="" /></td>
-                        <td><span id="conts"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <th>Комуналка</th>
-                        <td><input name="komun" id="kom" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="koms"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <th>Вивезення п.в.</th>
-                        <td><input name="export" id="export" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="exports"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <th>Домофон</th>
-                        <td><input name="phone" id="phone" placeholder="-" type="tel" value="" /></td>
-                        <td colspan="3"></td>
-                        <td><span id="phones"></span></td>
-                    </tr>
-                    <tr>
-                        <th colspan="1">К-сть прожив.</th>
-                        <td><input name="month" id="totalPerson" placeholder="-" type="tel" value="1" /> </td>
-                        <td colspan="4"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" style="text-align: left">Врахувати період відсутності<input name="action" id="period" type="checkbox" /> </td>
-                    </tr>
-                    <tr class="focus parametr-style">
-                        <th colspan="2">Загальний період</th>
-                        <th colspan="2">Днів відсутності</th>
-                        <th colspan="2">Відсутніх осіб</th>
-                    </tr>
-                    <tr class="focus">
-                        <td colspan="2"><input name="hide" id="periodAll" placeholder="-" type="tel" value="" disabled /> </td>
-                        <td colspan="2"><input name="hide" id="periodAbsence" required placeholder="-" type="tel" value="" disabled /> </td>
-                        <td colspan="2"><input name="hide" id="absentPerson" required placeholder="-" type="tel" value="" disabled /> </td>
-                    </tr>
-                    <tr>
-                        <th colspan="4">Загальна сума</th>
-                        <th colspan="2"><span id="total"></span></th>
-                    </tr>
-                </table>
-                <p id="current_date"></p>
-                <button class="form__btn" type="submit">Розрахувати</button>
-                <div><span class="tooltip"><span class="tooltiptext mod"> Reckon (beta) онлайн калькулятор <br /> Розрахунок в онлайн калькуляторі починається після введення необхідних показників в таблицю і натискання кнопки "Розрахувати". Показники для розрахунку розділені на групи “Персональні показники” (сума залежить від споживання) та “Загальні показники” (сума за послуги фіксована) в таблиці поля виділено різними кольорами. <br /> За необхідністю, калькулятор розраховає суму до сплати між мешканцями по групам. Якщо хтось із мешканців був відсутній певний період, можливо розрахувати плату за комунальні послуги з “врахуванням періоду відсутності” обравши необхідний параметр. <br /> Всі доступні для редагування поля можна змінювати без оновлення сторінки в браузері. Після коригування показників в таблицях необхідно повторно натиснути кнопку “Розрахувати”. <br /> Зверніть увагу, онлайн калькулятор перебуває на стадії розробки, в результатах розрахунків можливі помилки або похибки! </span>                    ?</span>
-                </div>
-                <table class="table2">
-                    <tr>
-                        <td></td>
-                        <td>Разом</td>
-                    </tr>
-                    <tr>
-                        <td>Сума персональних показників</td>
-                        <td><span id="personSum"></span></td>
-                    </tr>
-                    <tr class="period-mod">
-                        <td>В середньому за <span id="copyPeriodAll"></span> днів</td>
-                        <td><span id="persAvrg"></span></td>
-                    </tr>
-                    <tr class="period-mod">
-                        <td><span id="leftPersons"></span></td>
-                        <td><span id="devLeftPersons"></span></td>
-                    </tr>
-                    <tr>
-                        <td> <span id="personsTotal"></span> </td>
-                        <td><span id="devTotPerSum"></span></td>
-                    </tr>
-                    <tr class="general-color">
-                        <td>Сума загальних показників</td>
-                        <td><span id="generalSum"></span></td>
-                    </tr>
-                    <tr class="general-color ">
-                        <td>Поділити на <input class="input-style" name="general" id="genDevi" required placeholder="-" type="tel" value="2" /></td>
-                        <td><span id="genSumDevi"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Сума до сплати для групи осіб</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td> <span>для <input class="input-style" id="group1" required placeholder="-" type="tel" value="1" /> осіб</span>
-                            <span class="delete-input">із яких <input name="hide" class="input-style" id="groupAbs1" required placeholder="-" type="tel" value="0" disabled /> відсутні</span>
-                        </td>
-                        <td><span id="paySum1"></span></td>
-                    </tr>
-                    <tr>
-                        <td> <span>для <input class="input-style" id="group2" required placeholder="-" type="tel" value="3" /> осіб</span>
-                            <span class="delete-input">із яких <input name="hide" class="input-style" id="groupAbs2" required placeholder="-" type="tel" value="0" disabled /> відсутні</span>
-                        </td>
-                        <td><span id="paySum2"></span></td>
-                    </tr>
-                </table>
-            </form>
-            <!-- end count -->
+      <!-- begin container -->
+      <div class="container">
+        <!-- begin count -->
+        <form class="count-form" id="form">
+          <table class="table1">
+            <tr>
+              <th></th>
+              <th>Тариф</th>
+              <th>Поточні</th>
+              <th>Попередні</th>
+              <th>Різниця</th>
+              <th>Разом</th>
+            </tr>
+            <tr>
+              <th>Холодне вод.п.</th>
+              <td><input name="cold-water" id="cwTariff" required placeholder="-" type="tel" value="30.38" /></td>
+              <td class="tooltip"> <span class="tooltiptext">Натисніть Tab для преключення </span> <input name="cold-water" id="cwCur" required placeholder="-" type="tel" value="" /></td>
+              <td><input name="cold-water" id="cwPre" required placeholder="-" type="tel" value="" /></td>
+              <td><span id="cwUsage"></span></td>
+              <td><span id="cwSum"></span></td>
+            </tr>
+            <tr>
+              <th>Гаряче вод.п.</th>
+              <td><input name="hot-water" id="hwTariff" placeholder="-" type="tel" value="97.89" /></td>
+              <td><input name="hot-water" id="hwCur" placeholder="-" type="tel" value="" /></td>
+              <td><input name="hot-water" id="hwPre" placeholder="-" type="tel" value="" /></td>
+              <td><span id="hwUsage"></span></td>
+              <td><span id="hwSum"></span></td>
+            </tr>
+            <tr>
+              <th>Відвід г.в.</th>
+              <td><input name="out-water" id="owTariff" placeholder="-" type="tel" value="14.22" /></td>
+              <td><input name="out-water" id="owCur" placeholder="-" type="tel" value="" /></td>
+              <td><input name="out-water" id="owPre" placeholder="-" type="tel" value="" /></td>
+              <td><span id="owUsage"></span></td>
+              <td><span id="owSum"></span></td>
+            </tr>
+            <tr>
+              <th>Електроенергія</th>
+              <td><input name="electricity" id="elec" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="elecs"></span></td>
+            </tr>
+            <tr>
+              <th>Газ</th>
+              <td><input id="gaz" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="gazs"></span></td>
+            </tr>
+            <tr>
+              <th>Знижка</th>
+              <td class="discount"><input name="edit" id="edi" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="edis"></span></td>
+            </tr>
+            <tr class="general-color">
+              <th>Опалення</th>
+              <td><input name="heating" id="heat" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="heats"></span></td>
+            </tr>
+            <tr class="general-color">
+              <th>Внески ЦО</th>
+              <td><input name="сontribution" id="cont1" placeholder="-" type="tel" value="" /></td>
+              <td colspan="2"> Внески ГВП </td>
+              <td><input name="сontribution" id="cont2" placeholder="-" type="tel" value="" /></td>
+              <td><span id="conts"></span></td>
+            </tr>
+            <tr class="general-color">
+              <th>Комуналка</th>
+              <td><input name="komun" id="kom" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="koms"></span></td>
+            </tr>
+            <tr class="general-color">
+              <th>Вивезення п.в.</th>
+              <td><input name="export" id="export" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="exports"></span></td>
+            </tr>
+            <tr class="general-color">
+              <th>Домофон</th>
+              <td><input name="phone" id="phone" placeholder="-" type="tel" value="" /></td>
+              <td colspan="3"></td>
+              <td><span id="phones"></span></td>
+            </tr>
+            <tr>
+              <th colspan="1">К-сть прожив.</th>
+              <td><input name="month" id="totalPerson" placeholder="-" type="tel" value="1" /> </td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td colspan="6" style="text-align: left">Врахувати період відсутності<input name="action" id="period" type="checkbox" /> </td>
+            </tr>
+            <tr class="focus parametr-style">
+              <th colspan="2">Загальний період</th>
+              <th colspan="2">Днів відсутності</th>
+              <th colspan="2">Відсутніх осіб</th>
+            </tr>
+            <tr class="focus">
+              <td colspan="2"><input name="hide" id="periodAll" placeholder="-" type="tel" value="" disabled /> </td>
+              <td colspan="2"><input name="hide" id="periodAbsence" required placeholder="-" type="tel" value="" disabled /> </td>
+              <td colspan="2"><input name="hide" id="absentPerson" required placeholder="-" type="tel" value="" disabled /> </td>
+            </tr>
+            <tr>
+              <th colspan="4">Загальна сума</th>
+              <th colspan="2"><span id="total"></span></th>
+            </tr>
+          </table>
+          <p id="current_date"></p>
+          <button class="form__btn" type="submit">Розрахувати</button>
+          <div><span class="tooltip"><span class="tooltiptext mod"> Reckon (beta) онлайн калькулятор <br /> Розрахунок в онлайн калькуляторі починається після введення необхідних показників в таблицю і натискання кнопки "Розрахувати". Показники для розрахунку розділені на групи “Персональні показники” (сума залежить від споживання) та “Загальні показники” (сума за послуги фіксована) в таблиці поля виділено різними кольорами. <br /> За необхідністю, калькулятор розраховає суму до сплати між мешканцями по групам. Якщо хтось із мешканців був відсутній певний період, можливо розрахувати плату за комунальні послуги з “врахуванням періоду відсутності” обравши необхідний параметр. <br /> Всі доступні для редагування поля можна змінювати без оновлення сторінки в браузері. Після коригування показників в таблицях необхідно повторно натиснути кнопку “Розрахувати”. <br /> Зверніть увагу, онлайн калькулятор перебуває на стадії розробки, в результатах розрахунків можливі помилки або похибки! </span> ?</span>
+          </div>
+          <table class="table2">
+            <tr>
+              <td></td>
+              <td>Разом</td>
+            </tr>
+            <tr>
+              <td>Сума персональних показників</td>
+              <td><span id="personSum"></span></td>
+            </tr>
+            <tr class="period-mod">
+              <td>В середньому за <span id="copyPeriodAll"></span> днів</td>
+              <td><span id="persAvrg"></span></td>
+            </tr>
+            <tr class="period-mod">
+              <td><span id="leftPersons"></span></td>
+              <td><span id="devLeftPersons"></span></td>
+            </tr>
+            <tr>
+              <td> <span id="personsTotal"></span> </td>
+              <td><span id="devTotPerSum"></span></td>
+            </tr>
+            <tr class="general-color">
+              <td>Сума загальних показників</td>
+              <td><span id="generalSum"></span></td>
+            </tr>
+            <tr class="general-color ">
+              <td>Поділити на <input class="input-style" name="general" id="genDevi" required placeholder="-" type="tel" value="2" /></td>
+              <td><span id="genSumDevi"></span></td>
+            </tr>
+            <tr>
+              <td>Сума до сплати для групи осіб</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td> <span>для <input class="input-style" id="group1" required placeholder="-" type="tel" value="1" /> осіб</span>
+                <span class="delete-input">із яких <input name="hide" class="input-style" id="groupAbs1" required placeholder="-" type="tel" value="0" disabled /> відсутні</span>
+              </td>
+              <td><span id="paySum1"></span></td>
+            </tr>
+            <tr>
+              <td> <span>для <input class="input-style" id="group2" required placeholder="-" type="tel" value="3" /> осіб</span>
+                <span class="delete-input">із яких <input name="hide" class="input-style" id="groupAbs2" required placeholder="-" type="tel" value="0" disabled /> відсутні</span>
+              </td>
+              <td><span id="paySum2"></span></td>
+            </tr>
+          </table>
+        </form>
+        <!-- end count -->
+      </div>
+      <!-- end container -->
+      <!-- begin footer -->
+      <footer class="footer">
+        <!-- begin info -->
+        <div class="info">
+          <span>Маєте питання або пропозиції?</span>
+          <a href="#follow" class="message-btn" id="toggle" role="button" type="button">Напишіть нам</a>
+          <span class="copy">© 2022 Asyntrail</span>
         </div>
-        <!-- end container -->
-        <!-- begin footer -->
-        <footer class="footer">
-            <!-- begin info -->
-            <div class="info">
-                <span>Маєте питання або пропозиції?</span>
-                <a href="#follow" class="message-btn" id="toggle" role="button" type="button">Напишіть нам</a>
-                <span class="copy">© 2022 Asyntrail</span>
-            </div>
-            <!-- end info -->
-            <!-- begin contact -->
-            <div class="contact ">
-                <form class="contact-form" action="https://formspree.io/f/mpzbzdyb" method="POST">
-                    <label> Введіть ім'я <input class="contact-form__input" type="text" placeholder="Name" name="name" required>
+        <!-- end info -->
+        <!-- begin contact -->
+        <div class="contact ">
+          <form class="contact-form" action="https://formspree.io/f/mpzbzdyb" method="POST">
+            <label> Введіть ім'я <input class="contact-form__input" type="text" placeholder="Name" name="name" required />
             </label>
-                    <label> Введіть свою електронну адресу <input class="contact-form__input" type="email" placeholder="Email" name="_replyto" required>
+            <label> Введіть свою електронну адресу <input class="contact-form__input" type="email" placeholder="Email" name="_replyto" required />
             </label>
-                    <label id="follow"> Текст повідомлення <textarea class="contact-form__input text" placeholder="Your message" name="Your message" required></textarea>
+            <label id="follow"> Текст повідомлення <textarea class="contact-form__input text" placeholder="Your message" name="Your message" required></textarea>
             </label>
-                    <button class="form__btn" type="submit">Відправити</button>
-                </form>
-            </div>
-            <!-- end contact -->
-        </footer>
-        <!-- end footer -->
+            <button class="form__btn" type="submit">Відправити</button>
+          </form>
+        </div>
+        <!-- end contact -->
+      </footer>
+      <!-- end footer -->
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102349619-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-102349619-1');
-        document.getElementById('toggle').addEventListener('click', () => {
-            gtag('event', 'click', {
-                'event_category': 'form',
-                'event_label': 'click_form'
-            });
-        })
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102349619-1');
+      document.getElementById('toggle').addEventListener('click', () =>
+      {
+        gtag('event', 'click',
+        {
+          'event_category': 'form',
+          'event_label': 'click_form'
+        });
+      })
+
     </script>
-
     <!-- END scripts -->
-</body>
-
+  </body>
 </html>
