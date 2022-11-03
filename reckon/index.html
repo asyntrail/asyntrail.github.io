@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Reckon (beta) online calculator</title>
-    <meta name="description" content="Онлайн калькулятор для спрощення розрахунку комунальних платежів, а також розподілення оплати комунальних послуг між мешканцями." />
+    <meta name="description" content="Онлайн калькулятор для простого розрахунку комунальних платежів, а також розподілення оплати комунальних послуг між мешканцями." />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -16,7 +16,7 @@
       <!-- begin container -->
       <div class="container">
         <!-- begin count -->
-        <form class="count-form" id="form">
+        <form class="count-form" id="form" autocomplete="off">
           <table class="table1">
             <tr>
               <th></th>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
               <th colspan="1">К-сть прожив.</th>
-              <td><input name="month" id="totalPerson" placeholder="-" type="tel" value="1" /> </td>
+              <td><input name="month" id="totalPerson" placeholder="-" type="number" value="1" /> </td>
               <td colspan="4"></td>
             </tr>
             <tr>
